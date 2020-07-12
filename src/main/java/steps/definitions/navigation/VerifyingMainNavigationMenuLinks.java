@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -73,7 +74,10 @@ public class VerifyingMainNavigationMenuLinks {
             } else {
                 return false;
             }
-        } catch (Exception e){
+        } catch (SocketTimeoutException e){
+            System.out.format("Timeout error for %s. Ignoring for this test case",urlLink);
+            return false;
+        }catch (Exception e){
             e.printStackTrace();
             return false;
         }
