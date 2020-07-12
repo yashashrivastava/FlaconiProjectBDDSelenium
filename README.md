@@ -1,6 +1,6 @@
 ##BDD based Selenium project for Flaconi
 
-I have used cucumber framework to organize the test cases.  
+I have used cucumber framework and MAVEN Project to organize the test cases.
 
 ###To Run
 
